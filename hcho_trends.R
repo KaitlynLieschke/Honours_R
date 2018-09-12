@@ -61,71 +61,6 @@ ggplot(hcho_mon_trends, aes(x = months, y = trends), y) +
   theme_bw() + # remove grey background (because Tufte said so)
   theme(panel.grid.major = element_blank()) # remove x and y major grid lines (because Tufte said so)
 
-# Overall trend from 2000-2015
-start.date<- as.POSIXct("2000-01-01 00:00", tz= "GMT")
-end.date<- as.POSIXct("2015-12-31 23:59", tz = "GMT")
-sub_hcho_oe<-subset(hcho_oe,date>= start.date & date <= end.date)
-TheilSen(sub_hcho_oe,pollutant="HCHO",deseason="TRUE",slope.percent="TRUE",fontsize=20,
-         xlab="Year",ylab=expression(HCHO ~ (molecs.cm^{-2})),main="HCHO at Wollongong (oe_autocor) >2000",
-         pch=20,cex=0.5,data.col="black",line.col="blue",autocor = "TRUE")
-#Monthly trend from 2000-2015 (no autocorrelation)
-TheilSen(sub_hcho_oe,pollutant="HCHO",deseason="TRUE",slope.percent="TRUE",type="month",
-         fontsize=20,xlab='Year',ylab=expression(HCHO ~ (molecs.cm^{-2})),lty=1,pch=20,
-         main="HCHO at Wollongong (no autocor)",data.col="black",line.col="blue",lwd=4,
-         cex=0.05,autocor="FALSE")
-
-# Overall trend from 1999-2015
-start.date<- as.POSIXct("1999-01-01 00:00", tz= "GMT")
-end.date<- as.POSIXct("2015-12-31 23:59", tz = "GMT")
-sub_hcho_oe<-subset(hcho_oe,date>= start.date & date <= end.date)
-TheilSen(sub_hcho_oe,pollutant="HCHO",deseason="TRUE",slope.percent="TRUE",fontsize=20,
-         xlab="Year",ylab=expression(HCHO ~ (molecs.cm^{-2})),main="HCHO at Wollongong (oe_autocor) >2000",
-         pch=20,cex=0.5,data.col="black",line.col="blue",autocor = "TRUE")
-#Monthly trend from 2000-2015 (no autocorrelation)
-TheilSen(sub_hcho_oe,pollutant="HCHO",deseason="TRUE",slope.percent="TRUE",type="month",
-         fontsize=20,xlab='Year',ylab=expression(HCHO ~ (molecs.cm^{-2})),lty=1,pch=20,
-         main="HCHO at Wollongong (no autocor)",data.col="black",line.col="blue",lwd=4,
-         cex=0.05,autocor="FALSE")
-
-# Overall trend from 2004-2015
-start.date<- as.POSIXct("2004-01-01 00:00", tz= "GMT")
-end.date<- as.POSIXct("2015-12-31 23:00", tz = "GMT")
-sub_hcho_oe<-subset(hcho_oe,date>= start.date & date <= end.date)
-TheilSen(sub_hcho_oe,pollutant="HCHO",deseason="TRUE",slope.percent="TRUE",fontsize=20,
-         xlab="Year",ylab=expression(HCHO ~ (molecs.cm^{-2})),main="HCHO at Wollongong (oe_autocor) 2004-2015",
-         pch=":.",cex=0.5,data.col="black",line.col="blue",autocor = "TRUE")
-#Monthly trend from 2004-2015 (no autocorrelation)
-TheilSen(sub_hcho_oe,pollutant="HCHO",deseason="TRUE",slope.percent="TRUE",type="month",
-         fontsize=20,xlab='Year',ylab=expression(HCHO ~ (molecs.cm^{-2})),lty=1,pch=20,
-         main="HCHO at Wollongong (no autocor)",data.col="black",line.col="blue",lwd=4,
-         cex=0.05,autocor="FALSE")
-
-# Overall trend from 2003-2013
-start.date<- as.POSIXct("2003-02-01 00:00", tz= "GMT")
-end.date<- as.POSIXct("2013-09-30 23:00", tz = "GMT")
-sub_hcho_oe<-subset(hcho_oe,date>= start.date & date <= end.date)
-TheilSen(sub_hcho_oe,pollutant="HCHO",deseason="TRUE",slope.percent="TRUE",fontsize=20,
-         xlab="Year",ylab=expression(HCHO ~ (molecs.cm^{-2})),main="HCHO at Wollongong (oe_autocor) 2003-2013",
-         pch=20,cex=0.5,data.col="royalblue",line.col="blue",autocor = "TRUE",shade="WHITE")
-# Monthly trend from 2003-2013 (no autocorrelation)
-TheilSen(sub_hcho_oe,pollutant="HCHO",deseason="TRUE",slope.percent="TRUE",type="month",
-         fontsize=20,xlab='Year',ylab=expression(HCHO ~ (molecs.cm^{-2})),lty=1,pch=20,
-         main="HCHO at Wollongong (no autocor)",data.col="black",line.col="blue",lwd=4,
-         cex=0.05,autocor="FALSE")
-
-# Overall trend from 2003-2015
-start.date<- as.POSIXct("2003-01-01 00:00", tz= "GMT")
-end.date<- as.POSIXct("2015-12-31 23:00", tz = "GMT")
-sub_hcho_oe<-subset(hcho_oe,date>= start.date & date <= end.date)
-TheilSen(sub_hcho_oe,pollutant="HCHO",deseason="TRUE",slope.percent="TRUE",fontsize=20,
-         xlab="Year",ylab=expression(HCHO ~ (molecs.cm^{-2})),main="HCHO at Wollongong (oe_autocor) 2003-2013",
-         pch=20,cex=0.5,data.col="royalblue",line.col="blue",autocor = "TRUE",shade="WHITE")
-# Monthly trend from 2003-2013 (no autocorrelation)
-TheilSen(sub_hcho_oe,pollutant="HCHO",deseason="TRUE",slope.percent="TRUE",type="month",
-         fontsize=20,xlab='Year',ylab=expression(HCHO ~ (molecs.cm^{-2})),lty=1,pch=20,
-         main="HCHO at Wollongong (no autocor)",data.col="black",line.col="blue",lwd=4,
-         cex=0.05,autocor="FALSE")
-
 #BAR PLOT OF MONTHLY TRENDS
 hcho_sub_mon_trends <- data.frame(
   months = c("January","February","March","April","May","June","July","August","September","October","November","December"))
@@ -142,23 +77,34 @@ ggplot(hcho_sub_mon_trends, aes(x = months, y = trends), y) +
   theme_bw() + # remove grey background (because Tufte said so)
   theme(panel.grid.major = element_blank()) # remove x and y major grid lines (because Tufte said so)
 
-
-# Overall trend from 1997-2006
-start.date<- as.POSIXct("1997-01-01 00:00", tz= "GMT")
-end.date<- as.POSIXct("2007-10-31 23:00", tz = "GMT")
+# LIMIT DATES FOR TREND ANALYSIS
+# Overall trend from 2000-2015
+start.date<- as.POSIXct("2000-01-01 00:00", tz= "GMT")
+end.date<- as.POSIXct("2015-12-31 23:59", tz = "GMT")
 sub_hcho_oe<-subset(hcho_oe,date>= start.date & date <= end.date)
 TheilSen(sub_hcho_oe,pollutant="HCHO",deseason="TRUE",slope.percent="TRUE",fontsize=20,
-         xlab="Year",ylab=expression(HCHO ~ (molecs.cm^{-2})),main="HCHO at Wollongong (oe_autocor) 1997-2002",
-         pch=20,cex=0.5,data.col="blue",line.col="black",autocor = "TRUE")
-
-# Overall trend from 2007-2015
-start.date<- as.POSIXct("2007-10-01 00:00", tz= "GMT")
+         xlab="Year",ylab=expression(HCHO ~ (molecs.cm^{-2})),main="HCHO at Wollongong (oe_autocor) >2000",
+         pch=20,cex=0.5,data.col="black",line.col="blue",autocor = "TRUE")
+#Monthly trend from 2000-2015 (no autocorrelation)
+TheilSen(sub_hcho_oe,pollutant="HCHO",deseason="TRUE",slope.percent="TRUE",type="month",
+         fontsize=20,xlab='Year',ylab=expression(HCHO ~ (molecs.cm^{-2})),lty=1,pch=20,
+         main="HCHO at Wollongong (no autocor)",data.col="black",line.col="blue",lwd=4,
+         cex=0.05,autocor="FALSE")
+# Overall trend from 2004-2015
+start.date<- as.POSIXct("2004-01-01 00:00", tz= "GMT")
 end.date<- as.POSIXct("2015-12-31 23:00", tz = "GMT")
 sub_hcho_oe<-subset(hcho_oe,date>= start.date & date <= end.date)
 TheilSen(sub_hcho_oe,pollutant="HCHO",deseason="TRUE",slope.percent="TRUE",fontsize=20,
-         xlab="Year",ylab=expression(HCHO ~ (molecs.cm^{-2})),main="HCHO at Wollongong (oe_autocor) 2005-2015",
-         pch=20,cex=0.5,data.col="blue",line.col="black",autocor = "TRUE")
+         xlab="Year",ylab=expression(HCHO ~ (molecs.cm^{-2})),main="HCHO at Wollongong (oe_autocor) 2004-2015",
+         pch=":.",cex=0.5,data.col="black",line.col="blue",autocor = "TRUE")
+#Monthly trend from 2004-2015 (no autocorrelation)
+TheilSen(sub_hcho_oe,pollutant="HCHO",deseason="TRUE",slope.percent="TRUE",type="month",
+         fontsize=20,xlab='Year',ylab=expression(HCHO ~ (molecs.cm^{-2})),lty=1,pch=20,
+         main="HCHO at Wollongong (no autocor)",data.col="black",line.col="blue",lwd=4,
+         cex=0.05,autocor="FALSE")
 
+
+# LIMIT DATES FOR COMPARISON WITH CO AND HCN
 # Overall trend from from 1997-2014 (for comparison with CO and HCN)
 start.date<- as.POSIXct("1997-05-25 00:00", tz= "GMT")
 end.date<- as.POSIXct("2014-04-02 23:59", tz = "GMT")
@@ -166,25 +112,6 @@ sub_hcho_oe<-subset(hcho_oe,date>= start.date & date <= end.date)
 TheilSen(sub_hcho_oe,pollutant="HCHO",deseason="TRUE",slope.percent="TRUE",fontsize=20,
          xlab="Year",ylab=expression(HCHO ~ (molecs.cm^{-2})),main="HCHO at Wollongong (oe_autocor) 2005-2011",
          pch=20,cex=0.5,data.col="blue",line.col="black",autocor = "TRUE")
-
-# Monthly trends from 2005-2015
-start.date<- as.POSIXct("2005-01-01 00:00", tz= "GMT")
-end.date<- as.POSIXct("2015-12-31 23:00", tz = "GMT")
-sub_hcho_oe<-subset(hcho_oe,date>= start.date & date <= end.date)
-TheilSen(sub_hcho_oe,pollutant="HCHO",deseason="TRUE",slope.percent="TRUE",type="month",
-         fontsize=20,xlab="Year",ylab=expression(HCHO ~ (molecs.cm^{-2})),
-         main="HCHO at Wollongong (autocor) 2005-2015",data.col="blue",line.col="black",
-         pch=20,lsd=4,cex=0.5,autocor = "TRUE")
-
-# Monthly trends from 2005-2011
-start.date<- as.POSIXct("2005-01-01 00:00", tz= "GMT")
-end.date<- as.POSIXct("2011-12-31 23:00", tz = "GMT")
-sub_hcho_oe<-subset(hcho_oe,date>= start.date & date <= end.date)
-TheilSen(sub_hcho_oe,pollutant="HCHO",deseason="TRUE",slope.percent="TRUE",type="month",
-         fontsize=20,xlab="Year",ylab=expression(HCHO ~ (molecs.cm^{-2})),
-         main="HCHO at Wollongong (autocor) 2005-2011",data.col="blue",line.col="black",
-         pch=20,lsd=4,cex=0.5,autocor = "TRUE")
-
 # Monthly trends from 1997-2014 (for comparison with CO and HCN)
 start.date<- as.POSIXct("1997-05-25 00:00", tz= "GMT")
 end.date<- as.POSIXct("2014-04-02 23:59", tz = "GMT")

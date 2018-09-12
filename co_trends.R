@@ -13,7 +13,7 @@ start.date<- as.POSIXct("1997-05-25 00:00", tz= "GMT")
 end.date<- as.POSIXct("2014-04-02 23:59", tz = "GMT")
 co_long_cut<-subset(co_long,date>= start.date & date <= end.date)
 
-#Time Plot
+#Time series
 timePlot(co_long_cut, pollutant = "FTS", group=TRUE,plot.type="p",pch=20,
          cex=0.25,ylab=expression(CO ~ (molecs.cm^{-2})),
          fontsize=20,col="blue",key="FALSE")#ylim=c(0,2e17),

@@ -3,7 +3,7 @@
 # each month for each individual gas, bar graph of trends for each month for all gases
 
 #BAR PLOT OF MONTHLY TRENDS
-# HCHO TREND DATA
+# HCHO TREND DATA (values in parentheses are determined from TheilSen trend calculations in other R script)
 hcho_mon_trends <- data.frame(
   months = c("January","February","March","April","May","June","July","August","September","October","November","December"))
 #No Autocorrelation
